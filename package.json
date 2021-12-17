@@ -1,0 +1,28 @@
+{
+  "name": "algorithms-sort",
+  "version": "1.0.0",
+  "description": "JavaScript 实现的排序相关算法",
+  "main": "index.js",
+  "directories": {
+    "test": "jest"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rawbin-/algorithms-sort-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rawbin-/algorithms-sort-js/issues"
+  },
+  "homepage": "https://github.com/rawbin-/algorithms-sort-js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "jest": "^27.4.5"
+  }
+}
