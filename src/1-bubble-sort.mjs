@@ -1,24 +1,12 @@
-import {isValidDataList} from './common-util.mjs'
+import {dataListCommonCheck} from "./common-util.mjs";
 
-
-function bubbleCommonCheck(dataList){
-    if(!isValidDataList(dataList)){
-        return [false,null]
-    }
-
-    if(dataList.length < 2){
-        return [false,dataList]
-    }
-
-    return [true,dataList]
-}
 /**
  * 这个是小的往前放的思路
  * @param dataList
  * @returns {null|*}
  */
 export function bubbleSortA(dataList){
-    const [valid,result] = bubbleCommonCheck(dataList)
+    const [valid,result] = dataListCommonCheck(dataList)
     if(!valid){
         return result
     }
@@ -40,7 +28,7 @@ export function bubbleSortA(dataList){
  * @returns {null|*}
  */
 export function bubbleSortARecursive(dataList,startIndex = 0){
-    const [valid,result] = bubbleCommonCheck(dataList)
+    const [valid,result] = dataListCommonCheck(dataList)
     if(!valid){
         return result
     }
@@ -63,7 +51,7 @@ export function bubbleSortARecursive(dataList,startIndex = 0){
  * @returns {*}
  */
 export function bubbleSortB(dataList){
-    const [valid,result] = bubbleCommonCheck(dataList)
+    const [valid,result] = dataListCommonCheck(dataList)
     if(!valid){
         return result
     }
@@ -85,7 +73,7 @@ export function bubbleSortB(dataList){
  * @returns {*}
  */
 export function bubbleSortBRecursive(dataList, endIndex = dataList && dataList.length){
-    const [valid,result] = bubbleCommonCheck(dataList)
+    const [valid,result] = dataListCommonCheck(dataList)
     if(!valid){
         return result
     }
@@ -109,7 +97,7 @@ export function bubbleSortBRecursive(dataList, endIndex = dataList && dataList.l
  * @returns {null|*}
  */
 export function bubbleSortAOpt(dataList){
-    const [valid,result] = bubbleCommonCheck(dataList)
+    const [valid,result] = dataListCommonCheck(dataList)
     if(!valid){
         return result
     }
