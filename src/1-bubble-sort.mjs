@@ -25,6 +25,7 @@ export function bubbleSortA(dataList){
 /**
  * 这个是小的往前放的思路的递归实现
  * @param dataList
+ * @param startIndex
  * @returns {null|*}
  */
 export function bubbleSortARecursive(dataList,startIndex = 0){
@@ -37,7 +38,7 @@ export function bubbleSortARecursive(dataList,startIndex = 0){
         return
     }
     for(let i = startIndex; i < n - 1; i++){
-        if(dataList[i] > dataList[i+1]){
+        if(dataList[i] > dataList[i + 1]){
             [dataList[i],dataList[i + 1]] = [dataList[i + 1],dataList[i]]
         }
     }
