@@ -12,10 +12,10 @@ export function bubbleSortA(dataList){
     }
 
     const n = dataList.length
-    for(let i = 0; i < n; i++){
-        for(let j = i + 1; j < n; j++){  // 第 i+1 趟让下标 i 的元素有序
-            if(dataList[i] > dataList[j]){
-                [dataList[i],dataList[j]] = [dataList[j],dataList[i]]
+    for(let i = 1; i <= n; i++){
+        for(let j = n - 1; j >= i; j--){
+            if(dataList[j] < dataList[j - 1]){
+                [dataList[j],dataList[j - 1]] = [dataList[j - 1],dataList[j]]
             }
         }
     }
@@ -37,9 +37,9 @@ export function bubbleSortARecursive(dataList,startIndex = 0){
     if(startIndex === n - 1){
         return
     }
-    for(let i = startIndex; i < n - 1; i++){
-        if(dataList[i] > dataList[i + 1]){
-            [dataList[i],dataList[i + 1]] = [dataList[i + 1],dataList[i]]
+    for(let i = n - 1; i > startIndex; i--){
+        if(dataList[i] < dataList[i - 1]){
+            [dataList[i],dataList[i - 1]] = [dataList[i - 1],dataList[i]]
         }
     }
     bubbleSortARecursive(dataList,startIndex + 1)
@@ -105,14 +105,13 @@ export function bubbleSortAOpt(dataList){
 
     const n = dataList.length
     let isOrdered = true
-    for(let i = 0; i < n; i++){
-        for(let j = i + 1; j < n; j++){  // 第 i+1 趟让下标 i 的元素有序
-            if(dataList[i] > dataList[j]){
-                [dataList[i],dataList[j]] = [dataList[j],dataList[i]]
+    for(let i = 1; i <= n; i++){
+        for(let j = n - 1; j >= i; j--){  // 第 i+1 趟让下标 i 的元素有序
+            if(dataList[j] < dataList[j - 1]){
+                [dataList[j],dataList[j - 1]] = [dataList[j - 1],dataList[j]]
                 isOrdered = false // 第一轮发生过交换，就不是完全有序的
             }
         }
-
         if(isOrdered){
             break
         }

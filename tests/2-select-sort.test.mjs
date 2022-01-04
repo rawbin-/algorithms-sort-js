@@ -3,6 +3,6 @@ import {selectSort} from "../src/2-select-sort.mjs";
 
 describe('select sort',() => {
     test.each(testData)('select-$#',({input,output}) => {
-        expect(selectSort(input)).toEqual(output)
+        expect(selectSort(input && [...input])).toEqual(output)
     })
 })

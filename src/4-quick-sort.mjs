@@ -49,16 +49,16 @@ export function quickSortB(dataList,start,end){
         let low = start, high = end;
         let pivot = dataList[start]
         while (low < high){
-            while (low < high && pivot >= dataList[low]){
-                low++
-            }
-            while (low < high && pivot < dataList[high]){
+            while (low < high && pivot <= dataList[high]){
                 high--
             }
             [dataList[low],dataList[high]] = [dataList[high],dataList[low]]
+
+            while (low < high && pivot > dataList[low]){
+                low++
+            }
+            [dataList[high],dataList[low]] = [dataList[low],dataList[high]]
         }
-        // 这里low === high了
-        [dataList[start],dataList[high-1]] = [dataList[high-1],dataList[start]]
 
         quickSortB(dataList,start, low - 1)
         quickSortB(dataList,low + 1, end)
@@ -66,3 +66,7 @@ export function quickSortB(dataList,start,end){
 
     return dataList
 }
+
+
+console.log(quickSortB([3,2,1]))
+console.log(quickSortB([1, 3, 5, 4, 2, 0]))

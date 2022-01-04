@@ -3,22 +3,22 @@ import testData from "./common-test-data.mjs"
 
 describe("bubble sort", () => {
     test.each(testData)("bubbleSortA-$#",({input,output}) => {
-        expect(bubbleSortA(input)).toEqual(output)
+        expect(bubbleSortA(input && [...input])).toEqual(output)
     })
 
     test.each(testData)("bubbleSortARecursive-$#",({input,output}) => {
-        expect(bubbleSortARecursive(input)).toEqual(output)
+        expect(bubbleSortARecursive(input && [...input])).toEqual(output)
     })
 
     test.each(testData)("bubbleSortAOpt-$#",({input,output}) => {
-        expect(bubbleSortAOpt(input)).toEqual(output)
+        expect(bubbleSortAOpt(input && [...input])).toEqual(output)
     })
 
     test.each(testData)("bubbleSortB-$#",({input,output}) => {
-        expect(bubbleSortB(input)).toEqual(output)
+        expect(bubbleSortB(input && [...input])).toEqual(output)
     })
 
     test.each(testData)("bubbleSortBRecursive-$#",({input,output}) => {
-        expect(bubbleSortBRecursive(input)).toEqual(output)
+        expect(bubbleSortBRecursive(input && [...input])).toEqual(output)
     })
 })
